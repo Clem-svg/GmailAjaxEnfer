@@ -25,10 +25,10 @@ class EmailsController < ApplicationController
 
   def update
     @email = Email.find(params[:id])
-
-    if @email.read == true
+    
+    if @email.read === true
       @email.update(read: false)
-    else
+    else 
       @email.update(read: true)
     end
   end

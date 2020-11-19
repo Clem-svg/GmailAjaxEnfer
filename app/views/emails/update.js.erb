@@ -1,10 +1,11 @@
 
-console.log('hello from the update')
 console.log('<%= @email.read%>')
 
 
-if (<%= @email.read == false %> ) {
-    document.querySelector('.btn-info').textContent = 'Marquer comme lu'
+if (<%=@email.read%> == false) {
+  document.querySelector('.btn-light').textContent = "Marquer comme Lu";
+  document.querySelector('.remove-<%= @email.id %>').style.color = "";
 } else {
-    document.querySelector('.btn-info').textContent = 'Mail lu - Clic pour marquer comme Non-lu'
+  document.querySelector('.btn-light').textContent = "Marquer comme non-lu";
+  document.querySelector('.remove-<%= @email.id %>').style.color = "black";
 }
