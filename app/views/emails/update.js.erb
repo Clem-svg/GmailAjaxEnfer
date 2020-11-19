@@ -1,0 +1,10 @@
+
+console.log('hello from the update')
+console.log('<%= @email.read%>')
+
+
+if (<%= @email.read == false %> ) {
+    document.querySelector('.btn-info').textContent = 'Marquer comme lu'
+} else {
+    document.querySelector('.btn-info').textContent = 'Mail lu - Clic pour marquer comme Non-lu'
+}

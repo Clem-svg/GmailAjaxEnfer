@@ -23,6 +23,16 @@ class EmailsController < ApplicationController
   
   end
 
+  def update
+    @email = Email.find(params[:id])
+
+    if @email.read == true
+      @email.update(read: false)
+    else
+      @email.update(read: true)
+    end
+  end
+
   def destroy
     @email = Email.find(params[:id])
     @email.destroy
@@ -31,7 +41,7 @@ class EmailsController < ApplicationController
       format.js {}
     end
   end
-  
+
 
 
 end
