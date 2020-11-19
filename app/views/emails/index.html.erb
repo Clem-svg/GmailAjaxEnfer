@@ -11,15 +11,19 @@
         <% @emails.each do |email|  %>
         <div class="col py-2 mt-1 border bg-white">
         <li id="<%= email.id%>">
-          <strong>Object:</strong> <%= email.object  %> 
+               <strong>Objet : </strong><%= link_to email.object, email_path(email), remote: true %>
         </li>
         </div>
         <% end %>
       </ul>
     </div>
 
-    <div class="col py-3 px-lg-5 border bg-light">Email sélectionné</div>
+    <div class="col py-3 px-lg-5 border bg-light">
+      <h3>Email sélectionné</h3>
+      <p id="actual-content">
+      
     </div>
+
     
   </div>
 </div>
